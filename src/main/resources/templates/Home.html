@@ -1,0 +1,60 @@
+<!-- welcome.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Updated to column layout */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .welcome-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+        .logout-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logout Link -->
+    <a href="logout" class="logout-link">Logout</a>
+
+    <div class="welcome-message">
+        <h2>Welcome</h2>
+        <p>Hello, <span id="username"></span>! You are now logged in.</p>
+        <a href="searchPage">
+            <button>Go to Search Page</button>
+        </a>
+    </div>
+
+    <script>
+        // Retrieve username from session storage
+        var username = '[[${session.userData.firstName}]]' + " " + '[[${session.userData.lastName}]]';
+        console.log("Session data : ", username);
+        // Display the username in the welcome message
+        document.getElementById("username").innerText = username;
+    </script>
+
+</body>
+</html>

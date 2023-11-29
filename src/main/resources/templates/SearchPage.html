@@ -1,0 +1,82 @@
+<!-- searchPage.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .search-bar {
+            width: 80%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        .search-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <h2>Search Page</h2>
+        <input type="text" class="search-bar" placeholder="Enter your search term" id="searchTerm">
+        <button class="search-button" onclick="performSearch()">Search</button>
+        
+        <!-- Button to go back to the home page -->
+        <button class="back-button" onclick="goToHomePage()">Go Back to Home Page</button>
+    </div>
+
+    <script>
+        // Function to perform search (you can modify this according to your needs)
+        function performSearch() {
+            var searchTerm = document.getElementById("searchTerm").value;
+            alert("Performing search for: " + searchTerm);
+            // You can add logic to handle the search on the server-side (e.g., calling a controller)
+        }
+
+        // Function to navigate back to the home page
+        function goToHomePage() {
+            window.location.href = "home"; // Adjust the URL accordingly
+        }
+    </script>
+
+</body>
+</html>
